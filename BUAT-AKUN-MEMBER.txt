@@ -1,0 +1,11 @@
+CARA BUAT AKUN MEMBER ZDT TANPA EMAIL PRIBADI
+
+1. Buka Supabase > Authentication > Users > Add user.
+2. Isi email internal dengan format username@zdtmember.com.
+   Contoh: driftking01@zdtmember.com
+3. Isi password sementara yang kuat.
+4. Buat user dan pastikan akun dikonfirmasi / email confirmation dimatikan.
+5. Member login ke website dengan username: driftking01 dan password tadi.
+
+Email tersebut hanya identitas internal Supabase, bukan email pribadi member.
+Jangan gunakan email pribadi member tanpa izin.
