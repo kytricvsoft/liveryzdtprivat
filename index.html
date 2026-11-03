@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>ZDT LIVERY HUB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader" class="loader">
+    <div class="loader-mark">ZDT<span>.</span></div>
+    <div class="loader-line"><i></i></div>
+    <small>LOADING LIVERY HUB</small>
+  </div>
+
+  <main id="app" class="hidden">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="ZDT Home">ZDT<span>.</span></a>
+      <div class="top-actions">
+        <span id="user-label" class="user-label hidden"></span>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Buka menu" aria-expanded="false"><i></i><i></i><i></i></button>
+      </div>
+      <nav id="side-menu" class="side-menu hidden">
+        <button class="menu-item active" data-page="all">Semua Livery</button>
+        <button class="menu-item" data-page="favorites">⭐ Favorit Saya</button>
+        <button id="owner-login-open" class="menu-item">Login Owner</button>
+        <button id="owner-upload-link" class="menu-item hidden" data-page="admin">＋ Upload & Kelola Livery</button>
+        <button id="logout-btn" class="menu-item danger hidden">Keluar Akun Owner</button>
+      </nav>
+    </header>
+
+    <section id="owner-login-view" class="login-wrap hidden">
+      <div class="login-card">
+        <button id="owner-login-close" class="login-close" type="button">✕</button>
+        <div class="eyebrow">OWNER ACCESS</div>
+        <h1>LOGIN <span>KYY</span></h1>
+        <p class="muted">Login ini khusus owner untuk mengelola dan mengupload livery.</p>
+        <form id="login-form">
+          <label>Email akun owner</label>
+          <input id="login-email" type="email" autocomplete="username" placeholder="Email akun owner" required>
+          <label>Password</label>
+          <input id="login-password" type="password" autocomplete="current-password" placeholder="Password owner" required>
+          <button class="button button-red full" type="submit">LOGIN OWNER</button>
+          <p id="login-error" class="error"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="hub-view" class="hidden">
+      <section class="hero">
+        <div class="eyebrow">FR LEGENDS • PRIVATE COLLECTION</div>
+        <h1> ZDT LIVERY <span>HUB</span></h1>
+        <p>Satu tempat untuk semua koleksi livery ZDT.</p>
+        <div class="hero-stats"><span id="livery-count">0 LIVERY</span><b>●</b><span>MEMBER ACCESS</span></div>
+      </section>
+
+
+
+      <div id="notice" class="notice hidden"></div>
+      <section id="all-page" class="page">
+        <div class="section-heading"><div><span class="eyebrow">THE COLLECTION</span><h2>Semua Livery</h2></div></div>
+        <div id="livery-list" class="livery-list"></div>
+        <div id="empty-all" class="empty hidden">Belum ada livery. Tunggu KYY upload koleksi pertama!</div>
+      </section>
+
+      <section id="favorites-page" class="page hidden">
+        <div class="section-heading"><div><span class="eyebrow">YOUR SAVED ITEMS</span><h2>Livery Favorit</h2></div></div>
+        <div id="favorite-list" class="livery-list"></div>
+        <div id="empty-fav" class="empty hidden">Belum ada favorit. Tekan ⭐ pada livery yang kamu suka.</div>
+      </section>
+
+      <section id="admin-page" class="page hidden">
+        <div class="section-heading"><div><span class="eyebrow">DEVELOPER AREA</span><h2>Upload Livery</h2></div></div>
+        <form id="upload-form" class="upload-card">
+          <label>Foto preview <span>(1 foto untuk 1 livery)</span></label>
+          <input id="photo" type="file" accept="image/*" required>
+          <label>Nama livery</label>
+          <input id="livery-name" type="text" maxlength="70" placeholder="Contoh: ZDT Street Spec" required>
+          <label>Kode Body</label>
+          <textarea id="body-code" rows="4" placeholder="Tempel kode body di sini" required></textarea>
+          <label>Kode Kaca</label>
+          <textarea id="glass-code" rows="3" placeholder="Tempel kode kaca di sini" required></textarea>
+          <button id="upload-btn" class="button button-red full" type="submit">UPLOAD LIVERY</button>
+          <p id="upload-status" class="muted small"></p>
+        </form>
+        <div class="section-heading admin-list-title"><div><span class="eyebrow">MANAGE COLLECTION</span><h2>Kelola Livery</h2></div></div>
+        <div id="manage-list" class="manage-list"></div>
+      </section>
+
+      <footer>ZDT LIVERY HUB <span>•</span> BUILT FOR THE TEAM</footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
